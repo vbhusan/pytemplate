@@ -1,0 +1,26 @@
+{% extends "blooddb/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="container align-items-center">
+    <div class="row justify-content-center">
+        <div class="card" style="margin:20px; text-center;">
+            <h1 class="display-4 text-center card-title" style="color: crimson;">Sign Up</h1>
+            <hr>
+            <div class="module" style="margin-left: 10px; margin-right: 10px;">
+                <p class="text-center">Enter your details to create an account:</p>
+                <form class="justify-content-center" action="" method="post" style="">
+                    {{ form | crispy }}
+                    {% csrf_token %}
+                    <p class="center">
+                        <input type="submit" value="Create my account">
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

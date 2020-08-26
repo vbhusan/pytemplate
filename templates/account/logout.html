@@ -1,0 +1,15 @@
+{% extends 'blooddb/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Log Out{% endblock %}
+
+{% block content %}
+<div class="logout">
+    <h1 class="panel panel-blue">Log Out</h1>
+    <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-danger" type="submit">Log Out</button>
+    </form>
+</div>
+{% endblock content %}
